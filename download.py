@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import os.path
+import os
 import sys
 import argparse
 import time
@@ -35,6 +35,9 @@ def get_args():
 
 def get_token():
     try:
+        token = os.getenv('RUNPOD_SECRET_civitai')
+        if token:
+            return token
         with open(TOKEN_FILE, 'r') as file:
             token = file.read()
             return token
