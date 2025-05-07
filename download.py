@@ -35,7 +35,7 @@ def get_args():
 
 def get_token():
     try:
-        token = os.getenv('RUNPOD_SECRET_civitai')
+        token = os.getenv('RUNPOD_API_KEY')
         if token:
             return token
         with open(TOKEN_FILE, 'r') as file:
